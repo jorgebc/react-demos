@@ -14,10 +14,10 @@ function Menu(props) {
             </button>
             <nav style={{display: isVisible ? "block" : "none"}}>
                 <h6>Signed in as Coder123</h6>
-                <p><a>Your Profile</a></p>
-                <p><a>Your Repositories</a></p>
-                <p><a>Your Stars</a></p>
-                <p><a>Your Gists</a></p>
+                <p><a href="#top">Your Profile</a></p>
+                <p><a href="#top">Your Repositories</a></p>
+                <p><a href="#top">Your Stars</a></p>
+                <p><a href="#top">Your Gists</a></p>
             </nav>
         </React.Fragment>
     )

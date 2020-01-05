@@ -7,6 +7,7 @@ import ContextHookComponent from "./context/contextHook/ContextHookDemo";
 import Counter from "./hooks/Counter";
 import Contacts from "./hooks/Contacts";
 import TogglerDemo from "./hooks/toggler/TogglerDemo";
+import RouterDemo from "./router/RouterDemo";
 
 function App() {
     return (
@@ -30,6 +31,9 @@ function App() {
             <hr/>
 
             <TogglerDemo/>
+            <hr/>
+
+            <RouterDemo/>
             <hr/>
         </div>
     )
