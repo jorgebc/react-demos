@@ -5,7 +5,7 @@ const Context = React.createContext();
 function ContextProvider({children}) {
 
     const [photos, setPhotos] = useState([]);
-    const [cartItems, setCart] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
 
     const photosUrl = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json";
 
@@ -27,7 +27,7 @@ function ContextProvider({children}) {
     }
 
     function addToCart(photo) {
-        setCart(prevCart => [...prevCart, photo]);
+        setCartItems(prevCart => [...prevCart, photo]);
     }
 
     function isInCart(photoId) {
@@ -38,11 +38,39 @@ function ContextProvider({children}) {
         const updatedCart = cartItems.filter(photo => {
             return photo.id !== photoId;
         });
-        setCart(updatedCart);
+        setCartItems(updatedCart);
+    }
+
+    function isCartFilled() {
+        return cartItems.length > 0;
+    }
+
+    function calculateCartTotalAmount() {
+        return cartItems.reduce((total, item) => total + 5.99, 0)
+            .toLocaleString("es-ES", {
+                style: "currency",
+                currency: "EUR"
+            });
+    }
+
+    function emptyCart() {
+        setCartItems([]);
     }
 
     return (
-        <Context.Provider value={{photos, toggleFavorite, cartItems, addToCart, isInCart, removeFromCart}}>
+        <Context.Provider value={
+            {
+                photos,
+                toggleFavorite,
+                cartItems,
+                addToCart,
+                isInCart,
+                removeFromCart,
+                isCartFilled,
+                calculateCartTotalAmount,
+                emptyCart
+            }
+        }>
             {children}
         </Context.Provider>
     )
