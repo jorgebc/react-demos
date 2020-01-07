@@ -8,6 +8,7 @@ import Counter from "./hooks/Counter";
 import Contacts from "./hooks/Contacts";
 import TogglerDemo from "./hooks/toggler/TogglerDemo";
 import RouterDemo from "./router/RouterDemo";
+import ReduxDemo from "./redux/ReduxDemo";
 
 function App() {
     return (
@@ -34,6 +35,9 @@ function App() {
             <hr/>
 
             <RouterDemo/>
+            <hr/>
+
+            <ReduxDemo/>
             <hr/>
         </div>
     )
