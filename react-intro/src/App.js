@@ -9,6 +9,10 @@ import Contacts from "./hooks/Contacts";
 import TogglerDemo from "./hooks/toggler/TogglerDemo";
 import RouterDemo from "./router/RouterDemo";
 import ReduxDemo from "./redux/ReduxDemo";
+import {default as ReduxCounterWithConnnect} from "./redux/CounterWithConnect"
+
+import {Provider} from "react-redux";
+import store from "./redux/reduxCounter";
 
 function App() {
     return (
@@ -38,6 +42,11 @@ function App() {
             <hr/>
 
             <ReduxDemo/>
+            <hr/>
+
+            <Provider store={store}>
+                <ReduxCounterWithConnnect/>
+            </Provider>
             <hr/>
         </div>
     )
